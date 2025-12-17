@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Video Downloader</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h2>Video Downloader</h2>
+      <div id="serverStatus" class="server-status" title="Click to open server file location">
+        <span class="status-dot"></span>
+        <span class="status-text">Checking...</span>
+      </div>
+    </div>
+    
+    <input type="text" id="videoUrl" placeholder="Paste Video URL here...">
+    <button id="downloadBtn">Download</button>
+    
+    <!-- Progress Section -->
+    <div id="progressSection" class="progress-section hidden">
+      <div class="progress-info">
+        <span id="progressFilename" class="filename"></span>
+        <span id="progressPercent" class="percent">0%</span>
+      </div>
+      <div class="progress-bar">
+        <div id="progressFill" class="progress-fill"></div>
+      </div>
+      <div class="progress-details">
+        <span id="progressSize">0 MB / 0 MB</span>
+        <span id="progressSpeed">-- MB/s</span>
+        <span id="progressEta">ETA: --</span>
+      </div>
+    </div>
+    
+    <div id="status"></div>
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html>

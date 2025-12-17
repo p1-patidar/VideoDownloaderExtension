@@ -1,0 +1,32 @@
+{
+  "manifest_version": 3,
+  "name": "Video Downloader",
+  "version": "1.0",
+  "description": "Download videos from YouTube and Instagram via local backend",
+  "permissions": [
+    "activeTab",
+    "tabs",
+    "nativeMessaging",
+    "scripting"
+  ],
+  "host_permissions": [
+    "http://127.0.0.1:8000/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "<all_urls>"
+      ],
+      "js": [
+        "content.js"
+      ],
+      "run_at": "document_end"
+    }
+  ],
+  "action": {
+    "default_popup": "popup.html"
+  }
+}

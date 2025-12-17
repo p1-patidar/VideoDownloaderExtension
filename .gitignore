@@ -1,0 +1,36 @@
+# Virtual Environment
+.venv/
+venv/
+env/
+
+# Python cache
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# Downloaded files (user data)
+downloads/
+backend/downloads/
+
+# Log files
+*.log
+chrome_native.log
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Local command files with hardcoded paths
+open_folder.command
+
+# Temporary files
+*.tmp
+*.temp

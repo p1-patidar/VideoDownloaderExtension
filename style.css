@@ -1,0 +1,234 @@
+body {
+  width: 320px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  padding: 12px;
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+  color: #eee;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 4px;
+}
+
+h2 {
+  text-align: left;
+  color: #fff;
+  margin: 0;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+/* Server Status Indicator */
+.server-status {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 10px;
+  background: rgba(255,255,255,0.1);
+  border-radius: 12px;
+  cursor: pointer;
+  transition: background 0.2s;
+  font-size: 11px;
+}
+
+.server-status:hover {
+  background: rgba(255,255,255,0.2);
+}
+
+.status-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #ff6b6b;
+  animation: pulse 1.5s infinite;
+}
+
+.server-status.online .status-dot {
+  background: #51cf66;
+  animation: none;
+}
+
+.server-status.offline .status-dot {
+  background: #ff6b6b;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.4; }
+}
+
+.status-text {
+  color: #aaa;
+}
+
+.server-status.online .status-text {
+  color: #51cf66;
+}
+
+.server-status.offline .status-text {
+  color: #ff6b6b;
+}
+
+input {
+  padding: 10px 12px;
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 8px;
+  background: rgba(255,255,255,0.05);
+  color: #fff;
+  font-size: 13px;
+  transition: border-color 0.2s, background 0.2s;
+}
+
+input:focus {
+  outline: none;
+  border-color: #4dabf7;
+  background: rgba(255,255,255,0.1);
+}
+
+input::placeholder {
+  color: #666;
+}
+
+button {
+  padding: 12px;
+  background: linear-gradient(135deg, #4dabf7 0%, #228be6 100%);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 14px;
+  transition: transform 0.1s, box-shadow 0.2s;
+}
+
+button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(77, 171, 247, 0.4);
+}
+
+button:active {
+  transform: translateY(0);
+}
+
+button:disabled {
+  background: #444;
+  color: #888;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+/* Progress Section */
+.progress-section {
+  background: rgba(255,255,255,0.05);
+  border-radius: 8px;
+  padding: 12px;
+  margin-top: 4px;
+}
+
+.progress-section.hidden {
+  display: none;
+}
+
+.progress-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.filename {
+  font-size: 11px;
+  color: #aaa;
+  max-width: 200px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.percent {
+  font-size: 14px;
+  font-weight: 600;
+  color: #4dabf7;
+}
+
+.progress-bar {
+  height: 6px;
+  background: rgba(255,255,255,0.1);
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, #4dabf7 0%, #51cf66 100%);
+  border-radius: 3px;
+  transition: width 0.3s ease;
+}
+
+.progress-details {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 8px;
+  font-size: 10px;
+  color: #888;
+}
+
+/* Status Messages */
+#status {
+  font-size: 12px;
+  margin-top: 4px;
+  word-break: break-word;
+  padding: 8px;
+  border-radius: 6px;
+  text-align: center;
+}
+
+#status:empty {
+  display: none;
+}
+
+.success {
+  background: rgba(81, 207, 102, 0.1);
+  color: #51cf66;
+  border: 1px solid rgba(81, 207, 102, 0.2);
+}
+
+.error {
+  background: rgba(255, 107, 107, 0.1);
+  color: #ff6b6b;
+  border: 1px solid rgba(255, 107, 107, 0.2);
+}
+
+.info {
+  background: rgba(77, 171, 247, 0.1);
+  color: #4dabf7;
+  border: 1px solid rgba(77, 171, 247, 0.2);
+}
+
+/* Spinner for processing state */
+.spinner {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  border: 2px solid rgba(77, 171, 247, 0.3);
+  border-top-color: #4dabf7;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+  margin-right: 6px;
+  vertical-align: middle;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
